@@ -45,14 +45,15 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.httpBasic().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().authorizeRequests()
-				.antMatchers(HttpMethod.GET, "/alumnos/**").permitAll() // ver todos los alumnos 
-				.antMatchers(HttpMethod.GET, "/alumno/**").permitAll() // ver un determinado alumno
-				.antMatchers(HttpMethod.GET, "/usuarios/**").permitAll() // ver todos los usuarios
-				.antMatchers(HttpMethod.POST, "/alumno/**").permitAll() // añadir un alumno
-				.antMatchers(HttpMethod.PUT, "/alumno/**").permitAll() // modificar un alumno
-				.antMatchers(HttpMethod.DELETE, "/alumno/**").permitAll() // borrar un alumno
-				.antMatchers(HttpMethod.POST, "/usuario/**").permitAll() // añadir un usuario
-				.antMatchers(HttpMethod.PUT, "/usuario/**").permitAll() // modificar un alumno
+				.antMatchers(HttpMethod.GET, "/reservas/**").permitAll()  
+				.antMatchers(HttpMethod.GET, "/reserva/**").permitAll() 
+				.antMatchers(HttpMethod.POST, "/reserva/**").permitAll() 
+				.antMatchers(HttpMethod.PUT, "/reserva/**").permitAll() 
+				.antMatchers(HttpMethod.DELETE, "/reserva/**").permitAll() 
+				.antMatchers(HttpMethod.GET, "/usuarios/**").permitAll() 
+				.antMatchers(HttpMethod.GET, "/usuario/**").permitAll() 
+				.antMatchers(HttpMethod.POST, "/usuario/**").permitAll() 
+				.antMatchers(HttpMethod.PUT, "/usuario/**").permitAll()
 				.antMatchers(HttpMethod.DELETE, "/usuario/**").permitAll() // borrar un alumno
 				.anyRequest().permitAll().and().csrf().disable();
 
