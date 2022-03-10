@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor 
+@AllArgsConstructor
 public class UserEntity implements UserDetails {
 
 	@Id
@@ -36,15 +36,7 @@ public class UserEntity implements UserDetails {
 	@Column(unique = true)
 	private String username;
 	private String password;
-	private String email;
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	private String telefono;
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	@Enumerated(EnumType.STRING)
@@ -110,9 +102,12 @@ public class UserEntity implements UserDetails {
 	public void setRoles(Set<UserRole> roles) {
 		this.roles = roles;
 	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 	
+	public String getTelefono() {
+		return this.telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
 }
