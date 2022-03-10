@@ -36,9 +36,6 @@ public class Reserva {
 	private String horario;
 	private Boolean tranfer;
 	private String telefono;
-	
-	@ManyToOne(cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "usuario")
-	private UserEntity usuario;
+	private String email;
 
 }
