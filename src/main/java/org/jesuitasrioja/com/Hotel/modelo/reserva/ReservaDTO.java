@@ -15,5 +15,6 @@ public class ReservaDTO {
 	private String fechaSalida;
 	private String paisOrigen;
 	private String telefono;
+	private String email;
 
 }
