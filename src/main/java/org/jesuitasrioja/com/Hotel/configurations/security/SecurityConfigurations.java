@@ -24,10 +24,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
-	private final AuthenticationEntryPoint jwtAuthenticationEntryPoint = null;
-	private final UserDetailsService userDetailsService = null;
-	private final PasswordEncoder passwordEncoder = null;
-	private final JwtAuthorizationFilter jwtAuthorizationFilter = new JwtAuthorizationFilter();
+	private final AuthenticationEntryPoint jwtAuthenticationEntryPoint;
+	private final UserDetailsService userDetailsService;
+	private final PasswordEncoder passwordEncoder;
+	private final JwtAuthorizationFilter jwtAuthorizationFilter;
 
 	@Bean
 	@Override
@@ -51,7 +51,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/usuario/**").permitAll() 
 				.antMatchers(HttpMethod.POST, "/usuario/**").permitAll() 
 				.antMatchers(HttpMethod.PUT, "/usuario/**").permitAll()
-				.antMatchers(HttpMethod.DELETE, "/usuario/**").permitAll() // borrar un alumno
+				.antMatchers(HttpMethod.DELETE, "/usuario/**").permitAll()
 				.anyRequest().permitAll().and().csrf().disable();
 
 		// Añadimos el filtro (lo hacemos más adelante). Justo antes de
