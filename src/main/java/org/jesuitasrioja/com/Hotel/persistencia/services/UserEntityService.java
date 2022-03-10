@@ -32,7 +32,7 @@ public class UserEntityService extends BaseService<UserEntity, String, UserEntit
 
 		// en caso de no haber asignado un rol en la petición, añadimos uno por defecto
 		Set<UserRole> defaultRoles = new HashSet<UserRole>();
-		defaultRoles.add(UserRole.ADMIN);
+		defaultRoles.add(UserRole.USER);
 
 		if (userEntity.getRoles() == null) {
 

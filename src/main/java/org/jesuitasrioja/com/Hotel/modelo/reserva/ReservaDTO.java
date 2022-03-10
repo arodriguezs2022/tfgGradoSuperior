@@ -13,9 +13,7 @@ public class ReservaDTO {
 	private String nombre;
 	private String fechaEntrada;
 	private String fechaSalida;
-	private String paisOrigen;	
-	private String horario;
-	private Boolean tranfer;
+	private String paisOrigen;
 	private String telefono;
 
 }

@@ -1,10 +1,15 @@
 package org.jesuitasrioja.com.Hotel.modelo.reserva;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.jesuitasrioja.com.Hotel.modelo.user.UserEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,5 +36,9 @@ public class Reserva {
 	private String horario;
 	private Boolean tranfer;
 	private String telefono;
+	
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "usuario")
+	private UserEntity usuario;
 
 }
