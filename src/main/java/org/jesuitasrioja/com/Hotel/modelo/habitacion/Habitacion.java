@@ -1,5 +1,7 @@
 package org.jesuitasrioja.com.Hotel.modelo.habitacion;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +22,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "Habitaciones")
-public class Habitacion {
+public class Habitacion implements Serializable {
 	
 	@Id
 	@Include
