@@ -2,6 +2,7 @@ package org.jesuitasrioja.com.Hotel.modelo.pais;
 
 
 import java.io.Serializable;
+import java.sql.Blob;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,6 +34,6 @@ public class Pais implements Serializable{
 	
 	@Lob
 	@Column(name = "photo", columnDefinition="BLOB")
-	private byte[] photo;
+	private Blob photo;
 
 }
