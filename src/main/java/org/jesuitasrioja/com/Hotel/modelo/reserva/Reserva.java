@@ -1,5 +1,7 @@
 package org.jesuitasrioja.com.Hotel.modelo.reserva;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.jesuitasrioja.com.Hotel.modelo.user.UserEntity;
+import org.jesuitasrioja.com.Hotel.modelo.habitacion.Habitacion;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +25,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "Reserva")
-public class Reserva {
+public class Reserva implements Serializable{
 	
 	@Id
 	@Include
@@ -37,5 +39,9 @@ public class Reserva {
 	private Boolean tranfer;
 	private String telefono;
 	private String email;
+	
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "habitacion")
+	private Habitacion habitacion;
 
 }
