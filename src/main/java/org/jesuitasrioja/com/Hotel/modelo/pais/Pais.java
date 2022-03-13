@@ -2,14 +2,11 @@ package org.jesuitasrioja.com.Hotel.modelo.pais;
 
 
 import java.io.Serializable;
-import java.sql.Blob;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -31,9 +28,6 @@ public class Pais implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String descripcion;
-	
-	@Lob
-	@Column(name = "photo", columnDefinition="BLOB")
-	private Blob photo;
+	private String photo;
 
 }
