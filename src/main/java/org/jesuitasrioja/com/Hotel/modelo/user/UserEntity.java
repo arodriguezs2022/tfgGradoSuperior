@@ -37,6 +37,7 @@ public class UserEntity implements UserDetails {
 	private String username;
 	private String password;
 	private String telefono;
+	private String email;
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	@Enumerated(EnumType.STRING)
