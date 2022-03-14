@@ -1,8 +1,8 @@
 package org.jesuitasrioja.com.Hotel.modelo.habitacion;
 
 import java.io.Serializable;
+import java.sql.Blob;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,6 +31,7 @@ public class Habitacion implements Serializable {
 	private String nombre;
 	private String descripcion;
 	private Integer precio;
-	private String photo;
+	@Lob
+	private Blob photo;
 
 }
