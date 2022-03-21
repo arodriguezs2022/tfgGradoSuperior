@@ -123,7 +123,7 @@ public class HabitacionController {
 
 	@ApiOperation(value = "Borrar una habitacion", notes = "Con este metodo conseguimos borrar una Habitacion por identificador. De esta forma conseguiremos borrar una Habitacion específica.")
 	@DeleteMapping("/habitacion/{id}")
-	public ResponseEntity<Habitacion> deletePais(@PathVariable Integer id) {
+	public ResponseEntity<Habitacion> deleteHabitacion(@PathVariable Integer id) {
 		Habitacion h = hs.findById(id).get();
 		hs.deleteById(id);
 		return ResponseEntity.status(HttpStatus.OK).body(h);

@@ -1,13 +1,11 @@
 package org.jesuitasrioja.com.Hotel.modelo.habitacion;
 
 import java.io.Serializable;
-import java.sql.Blob;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -31,7 +29,6 @@ public class Habitacion implements Serializable {
 	private String nombre;
 	private String descripcion;
 	private Integer precio;
-	@Lob
-	private Blob photo;
+	private String photo;
 
 }

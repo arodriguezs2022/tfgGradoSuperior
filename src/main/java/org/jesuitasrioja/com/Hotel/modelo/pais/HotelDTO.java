@@ -1,7 +1,5 @@
 package org.jesuitasrioja.com.Hotel.modelo.pais;
 
-import java.sql.Blob;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PaisDTO {
+public class HotelDTO {
 
 	private Integer id;
 	private String descripcion;
-	private Blob photo;
+	private String photo;
 
 }
