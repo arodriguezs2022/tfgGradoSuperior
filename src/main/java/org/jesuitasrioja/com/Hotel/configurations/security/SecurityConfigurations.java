@@ -60,11 +60,11 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.POST, "/habitacion/**").permitAll()
 				.antMatchers(HttpMethod.PUT, "/habitacion/**").permitAll() 
 				.antMatchers(HttpMethod.DELETE, "/habitacion/**").permitAll() 
-				.antMatchers(HttpMethod.GET, "/paises/**").permitAll()  
-				.antMatchers(HttpMethod.GET, "/pais/**").permitAll() 
-				.antMatchers(HttpMethod.POST, "/pais/**").permitAll()
-				.antMatchers(HttpMethod.PUT, "/pais/**").permitAll() 
-				.antMatchers(HttpMethod.DELETE, "/pais/**").permitAll() 
+				.antMatchers(HttpMethod.GET, "/hoteles/**").permitAll()  
+				.antMatchers(HttpMethod.GET, "/hotel/**").permitAll() 
+				.antMatchers(HttpMethod.POST, "/hotel/**").permitAll()
+				.antMatchers(HttpMethod.PUT, "/hotel/**").permitAll() 
+				.antMatchers(HttpMethod.DELETE, "/hotel/**").permitAll() 
 				.anyRequest().permitAll().and().csrf().disable();
 
 		// Añadimos el filtro (lo hacemos más adelante). Justo antes de
