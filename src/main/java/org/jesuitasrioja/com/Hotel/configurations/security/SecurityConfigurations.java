@@ -64,7 +64,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/hotel/**").permitAll() 
 				.antMatchers(HttpMethod.POST, "/hotel/**").permitAll()
 				.antMatchers(HttpMethod.PUT, "/hotel/**").permitAll() 
-				.antMatchers(HttpMethod.DELETE, "/hotel/**").permitAll() 
+				.antMatchers(HttpMethod.DELETE, "/hotel/**").permitAll()
 				.anyRequest().permitAll().and().csrf().disable();
 
 		// Añadimos el filtro (lo hacemos más adelante). Justo antes de

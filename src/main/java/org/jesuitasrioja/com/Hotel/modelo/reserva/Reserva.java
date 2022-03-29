@@ -39,6 +39,7 @@ public class Reserva implements Serializable{
 	private Boolean tranfer;
 	private String telefono;
 	private String email;
+	private String totalDinero;
 	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "habitacion")

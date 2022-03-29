@@ -30,5 +30,7 @@ public class Habitacion implements Serializable {
 	private String descripcion;
 	private Integer precio;
 	private String photo;
+	private String tipo;
+	private Integer huespedes;
 
 }
