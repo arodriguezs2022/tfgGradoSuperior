@@ -92,14 +92,9 @@ public class HotelController {
 		h.setDescripcion(nuevoHotel.getDescripcion());
 		h.setPhoto(nuevoHotel.getPhoto());
 		
-		Optional<Hotel> hotelOptional = hs.findById(h.getId());
+		hs.save(h);
+		return ResponseEntity.status(HttpStatus.OK).body("");
 		
-		if(hotelOptional.isPresent()) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El hotel que intentas añadir ya esta añadido");
-		} else {
-			hs.save(h);
-			return ResponseEntity.status(HttpStatus.OK).body("");
-		}
 	}
 
 	/*
