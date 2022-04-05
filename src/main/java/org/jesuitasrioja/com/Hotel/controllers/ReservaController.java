@@ -95,6 +95,7 @@ public class ReservaController {
 		r.setPaisOrigen(nuevaReserva.getPaisOrigen());
 		r.setTranfer(nuevaReserva.getTranfer());
 		r.setTelefono(nuevaReserva.getTelefono());
+		r.setTotalDinero(nuevaReserva.getTotalDinero());
 
 		Optional<Reserva> reservaOptional = rs.findById(r.getId());
 		

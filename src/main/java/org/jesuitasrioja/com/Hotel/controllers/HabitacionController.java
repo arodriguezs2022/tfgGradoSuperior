@@ -92,6 +92,8 @@ public class HabitacionController {
 		h.setDescripcion(nuevaHabitacion.getDescripcion());
 		h.setPhoto(nuevaHabitacion.getPhoto());
 		h.setPrecio(nuevaHabitacion.getPrecio());
+		h.setTipo(nuevaHabitacion.getTipo());
+		h.setHuespedes(nuevaHabitacion.getHuespedes());
 		
 		Optional<Habitacion> habitacionOptional = hs.findById(h.getId());
 		
