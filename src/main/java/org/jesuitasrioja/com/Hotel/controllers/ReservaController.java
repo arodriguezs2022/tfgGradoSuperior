@@ -96,15 +96,9 @@ public class ReservaController {
 		r.setTranfer(nuevaReserva.getTranfer());
 		r.setTelefono(nuevaReserva.getTelefono());
 		r.setTotalDinero(nuevaReserva.getTotalDinero());
-
-		Optional<Reserva> reservaOptional = rs.findById(r.getId());
+		rs.save(r);
+		return ResponseEntity.status(HttpStatus.OK).body("");
 		
-		if(reservaOptional.isPresent()) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("La reserva que intentas añadir ya esta añadida");
-		} else {
-			rs.save(r);
-			return ResponseEntity.status(HttpStatus.OK).body("");
-		}
 	}
 
 	/*
