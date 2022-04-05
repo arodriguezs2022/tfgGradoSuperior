@@ -94,15 +94,10 @@ public class HabitacionController {
 		h.setPrecio(nuevaHabitacion.getPrecio());
 		h.setTipo(nuevaHabitacion.getTipo());
 		h.setHuespedes(nuevaHabitacion.getHuespedes());
-		
-		Optional<Habitacion> habitacionOptional = hs.findById(h.getId());
-		
-		if(habitacionOptional.isPresent()) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("La habitacion que intentas añadir ya esta añadida");
-		} else {
-			hs.save(h);
-			return ResponseEntity.status(HttpStatus.OK).body("");
-		}
+	
+		hs.save(h);
+		return ResponseEntity.status(HttpStatus.OK).body("");
+	
 	}
 
 	/*
