@@ -1,5 +1,6 @@
 package org.jesuitasrioja.com.Hotel.controllers;
 
+import java.util.Date;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -57,6 +58,12 @@ public class HabitacionController {
 
 		return ResponseEntity.status(HttpStatus.OK).body(paginaDTO);
 	}
+	
+	@ApiOperation(value = "Obtener una habitacion por identificador", notes = "Con este metodo conseguimos recoger la información de una Habitacion específica.")
+	@GetMapping("/habitaciones/{fechaEntrada}/{fechaSalida}")
+	public ResponseEntity<?> getHabitacionesDisponibles(@PathVariable Date fechaEntrada, @PathVariable Date fechaSalida) {
+		return ResponseEntity.status(HttpStatus.OK).body(hs.getRooms(fechaEntrada, fechaSalida));
+	}
 
 	/*
 	 * 
@@ -99,6 +106,8 @@ public class HabitacionController {
 		return ResponseEntity.status(HttpStatus.OK).body("");
 	
 	}
+	
+	
 
 	/*
 	 * 
