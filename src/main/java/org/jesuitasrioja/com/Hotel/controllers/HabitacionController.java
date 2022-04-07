@@ -61,7 +61,7 @@ public class HabitacionController {
 	}
 	
 	@ApiOperation(value = "Obtener una habitacion por identificador", notes = "Con este metodo conseguimos recoger la información de una Habitacion específica.")
-	@PostMapping("/habitaciones/")
+	@PostMapping("/habitaciones")
 	public ResponseEntity<?> getHabitacionesDisponibles(@RequestBody Reserva reservaFechas) {
 		
 		Date fechaEntrada = reservaFechas.getFechaEntrada();
