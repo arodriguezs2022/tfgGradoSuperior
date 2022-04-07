@@ -1,6 +1,7 @@
 package org.jesuitasrioja.com.Hotel.modelo.reserva;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -32,8 +33,8 @@ public class Reserva implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String nombre;
-	private String fechaEntrada;
-	private String fechaSalida;
+	private Date fechaEntrada;
+	private Date fechaSalida;
 	private String paisOrigen;	
 	private String horario;
 	private Boolean tranfer;

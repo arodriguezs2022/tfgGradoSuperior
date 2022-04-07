@@ -7,6 +7,7 @@ import java.util.function.Function;
 import org.jesuitasrioja.com.Hotel.modelo.habitacion.Habitacion;
 import org.jesuitasrioja.com.Hotel.modelo.habitacion.HabitacionDTO;
 import org.jesuitasrioja.com.Hotel.modelo.habitacion.HabitacionDTOConverter;
+import org.jesuitasrioja.com.Hotel.modelo.reserva.Reserva;
 import org.jesuitasrioja.com.Hotel.persistencia.services.HabitacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -60,8 +61,12 @@ public class HabitacionController {
 	}
 	
 	@ApiOperation(value = "Obtener una habitacion por identificador", notes = "Con este metodo conseguimos recoger la información de una Habitacion específica.")
-	@GetMapping("/habitaciones/{fechaEntrada}/{fechaSalida}")
-	public ResponseEntity<?> getHabitacionesDisponibles(@PathVariable Date fechaEntrada, @PathVariable Date fechaSalida) {
+	@PostMapping("/habitaciones/")
+	public ResponseEntity<?> getHabitacionesDisponibles(@RequestBody Reserva reservaFechas) {
+		
+		Date fechaEntrada = reservaFechas.getFechaEntrada();
+		Date fechaSalida = reservaFechas.getFechaSalida();
+		
 		return ResponseEntity.status(HttpStatus.OK).body(hs.getRooms(fechaEntrada, fechaSalida));
 	}
 
