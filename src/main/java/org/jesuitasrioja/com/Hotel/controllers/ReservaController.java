@@ -47,15 +47,7 @@ public class ReservaController {
 	public ResponseEntity<?> allReservas(@PageableDefault(size = 10, page = 0) Pageable pageable) {
 		Page<Reserva> pagina = rs.findAll(pageable);
 
-		// transformar elementos de la pagina a DTO
-		Page<ReservaDTO> paginaDTO = pagina.map(new Function<Reserva, ReservaDTO>() {
-			@Override
-			public ReservaDTO apply(Reserva r) {
-				return reservaDTOConverter.convertReservaToReservaDTO(r);
-			}
-		});
-
-		return ResponseEntity.status(HttpStatus.OK).body(paginaDTO);
+		return ResponseEntity.status(HttpStatus.OK).body(pagina);
 	}
 
 	/*
