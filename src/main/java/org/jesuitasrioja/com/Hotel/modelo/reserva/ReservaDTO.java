@@ -10,7 +10,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReservaDTO {
-	private Integer id;
+	private String nombre;
 	private Date fechaEntrada;
 	private Date fechaSalida;
+	private String paisOrigen;	
+	private String horario;
+	private Boolean tranfer;
+	private String telefono;
+	private String email;
+	private String totalDinero;
 }

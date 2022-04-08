@@ -4,7 +4,6 @@ package org.jesuitasrioja.com.Hotel.configurations.security;
 import org.jesuitasrioja.com.Hotel.configurations.security.jwt.JwtAuthorizationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -45,27 +44,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.httpBasic().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().authorizeRequests()
-				.antMatchers(HttpMethod.GET, "/reservas/**").permitAll()  
-				.antMatchers(HttpMethod.GET, "/reserva/**").permitAll() 
-				.antMatchers(HttpMethod.POST, "/reserva/**").permitAll()
-				.antMatchers(HttpMethod.PUT, "/reserva/**").permitAll() 
-				.antMatchers(HttpMethod.DELETE, "/reserva/**").permitAll() 
-				.antMatchers(HttpMethod.GET, "/usuarios/**").permitAll() 
-				.antMatchers(HttpMethod.GET, "/usuario/**").permitAll() 
-				.antMatchers(HttpMethod.POST, "/usuario/**").permitAll() 
-				.antMatchers(HttpMethod.PUT, "/usuario/**").permitAll()
-				.antMatchers(HttpMethod.DELETE, "/usuario/**").permitAll()
-				.antMatchers(HttpMethod.GET, "/habitaciones/**").permitAll()  
-				.antMatchers(HttpMethod.GET, "/habitacion/**").permitAll() 
-				.antMatchers(HttpMethod.POST, "/habitacion/**").permitAll()
-				.antMatchers(HttpMethod.PUT, "/habitacion/**").permitAll() 
-				.antMatchers(HttpMethod.DELETE, "/habitacion/**").permitAll() 
-				.antMatchers(HttpMethod.GET, "/hoteles/**").permitAll()  
-				.antMatchers(HttpMethod.GET, "/hotel/**").permitAll() 
-				.antMatchers(HttpMethod.POST, "/hotel/**").permitAll()
-				.antMatchers(HttpMethod.PUT, "/hotel/**").permitAll() 
-				.antMatchers(HttpMethod.DELETE, "/hotel/**").permitAll()
-				.anyRequest().permitAll().and().csrf().disable();
+			.anyRequest().permitAll().and().csrf().disable();
 
 		// Añadimos el filtro (lo hacemos más adelante). Justo antes de
 		// UsernamePasswordAuthenticationFilter.class.
