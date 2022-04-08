@@ -58,7 +58,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/habitaciones/**").permitAll()  
 				.antMatchers(HttpMethod.GET, "/habitacion/**").permitAll() 
 				.antMatchers(HttpMethod.POST, "/habitacion/**").permitAll()
-				.antMatchers(HttpMethod.POST, "/habitaciones/**").permitAll()
+//				.antMatchers(HttpMethod.POST, "/habitaciones/**").permitAll()
 				.antMatchers(HttpMethod.PUT, "/habitacion/**").permitAll() 
 				.antMatchers(HttpMethod.DELETE, "/habitacion/**").permitAll() 
 				.antMatchers(HttpMethod.GET, "/hoteles/**").permitAll()  
