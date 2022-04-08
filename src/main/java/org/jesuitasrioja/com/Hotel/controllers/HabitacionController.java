@@ -61,15 +61,15 @@ public class HabitacionController {
 		return ResponseEntity.status(HttpStatus.OK).body(paginaDTO);
 	}
 	
-	@ApiOperation(value = "Obtener una habitacion por identificador", notes = "Con este metodo conseguimos recoger la información de una Habitacion específica.")
-	@PostMapping("/habitaciones")
-	public ResponseEntity<?> getHabitacionesDisponibles(@RequestBody Reserva fechas) {
-		
-		Date fechaEntrada = fechas.getFechaEntrada();
-		Date fechaSalida = fechas.getFechaSalida();
-		
-		return ResponseEntity.status(HttpStatus.OK).body(hs.getRooms(fechaEntrada, fechaSalida));
-	}
+//	@ApiOperation(value = "Obtener una habitacion por identificador", notes = "Con este metodo conseguimos recoger la información de una Habitacion específica.")
+//	@PostMapping("/habitaciones")
+//	public ResponseEntity<?> getHabitacionesDisponibles(@RequestBody Reserva fechas) {
+//		
+//		Date fechaEntrada = fechas.getFechaEntrada();
+//		Date fechaSalida = fechas.getFechaSalida();
+//		
+//		return ResponseEntity.status(HttpStatus.OK).body(hs.getRooms(fechaEntrada, fechaSalida));
+//	}
 
 	/*
 	 * 
